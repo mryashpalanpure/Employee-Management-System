@@ -1,0 +1,575 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: grey;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+header {
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+main {
+    padding: 30px;
+}
+
+.form-section {
+    background-color: #f9fafc;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 3px solid black;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 1.05rem;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e1e5eb;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    background-color: white;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.gender-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.gender-options label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.gender-options input[type="radio"] {
+    width: auto;
+    margin: 0;
+}
+
+.hobbies-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.hobbies-options label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.hobbies-options input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+    min-width: 180px;
+}
+
+.submit-btn {
+    background: linear-gradient(to right, #2ecc71, #27ae60);
+    color: white;
+}
+
+.edit-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    background: linear-gradient(to right, #3498db, #2980b9);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 2px;
+    min-width: auto;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(to right, #27ae60, #219653);
+    transform: translateY(-3px);
+    box-shadow: 0 7px 14px rgba(39, 174, 96, 0.3);
+}
+
+.edit-btn:hover {
+    background: linear-gradient(to right, #2980b9, #1c6ea4);
+    transform: translateY(-2px);
+}
+
+.reset-btn {
+    background: linear-gradient(to right, #e74c3c, #c0392b);
+    color: white;
+}
+
+.delete-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    background: linear-gradient(to right, #e74c3c, #c0392b);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 2px;
+    min-width: auto;
+}
+
+.reset-btn:hover {
+    background: linear-gradient(to right, #c0392b, #a93226);
+    transform: translateY(-3px);
+    box-shadow: 0 7px 14px rgba(231, 76, 60, 0.3);
+}
+
+.delete-btn:hover {
+    background: linear-gradient(to right, #c0392b, #a93226);
+    transform: translateY(-2px);
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-box {
+    background: #fff;
+    padding: 20px;
+    width: 400px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.modal-actions {
+    margin: 15px;
+    gap: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 1px solid #e1e5eb;
+}
+
+#employeeTable {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    min-width: 800px; /* Minimum width for very small screens */
+}
+
+#employeeTable thead {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+#employeeTable th {
+    color: white;
+    font-weight: 600;
+    text-align: left;
+    padding: 18px 15px;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+}
+
+#employeeTable tbody tr {
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #e1e5eb;
+}
+
+#employeeTable tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+#employeeTable tbody tr:nth-child(odd) {
+    background-color: white;
+}
+
+#employeeTable tbody tr:hover {
+    background-color: #e3f2fd;
+    transform: scale(1.005);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+#employeeTable td {
+    padding: 16px 15px;
+    color: #2c3e50;
+    border: none;
+    font-size: 1rem;
+    line-height: 1.5;
+    vertical-align: top;
+    word-break: break-word;
+}
+
+#employeeTable td:first-child {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+#employeeTable tbody:empty::after {
+    content: "No employee records found. Add your first employee!";
+    display: table-row;
+}
+
+#employeeTable tbody:empty::after td {
+    text-align: center;
+    padding: 40px;
+    font-style: italic;
+    color: #7f8c8d;
+    font-size: 1.1rem;
+    width: 100%;
+}
+
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: flex-start;
+}
+
+@media (max-width: 1024px) {
+    .container, .table-container {
+        margin: 0 auto 20px;
+        border-radius: 10px;
+    }
+    
+    header h1 {
+        font-size: 1.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container,
+    .table-container {
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 15px;
+    }
+
+    header {
+        padding: 25px 20px;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    .form-section {
+        padding: 20px;
+        border-width: 2px;
+    }
+
+    .form-group {
+        margin-bottom: 18px;
+    }
+
+    .form-group label {
+        font-size: 1rem;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-top: 25px;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 300px;
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    .gender-options {
+        gap: 15px;
+    }
+
+    .hobbies-options {
+        gap: 12px;
+    }
+
+    input,
+    select,
+    textarea {
+        padding: 12px 14px;
+        font-size: 0.95rem;
+    }
+
+    .table-container {
+        padding: 15px;
+    }
+
+    .table-wrapper {
+        margin-top: 15px;
+    }
+
+    #employeeTable {
+        min-width: 700px;
+    }
+
+    #employeeTable th,
+    #employeeTable td {
+        padding: 12px 10px;
+        font-size: 0.9rem;
+    }
+
+    #employeeTable th {
+        font-size: 0.85rem;
+        padding: 14px 10px;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        gap: 8px;
+        min-width: 120px;
+    }
+    
+    .edit-btn, .delete-btn {
+        width: 100%;
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.4rem;
+    }
+
+    .container, .table-container {
+        padding: 15px;
+    }
+
+    .form-section {
+        padding: 15px;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+        min-width: 160px;
+    }
+
+    .gender-options {
+        gap: 10px;
+    }
+
+    .hobbies-options {
+        gap: 10px;
+    }
+
+    .hobbies-options label {
+        font-size: 0.9rem;
+    }
+
+    input,
+    select,
+    textarea {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+
+    #employeeTable th,
+    #employeeTable td {
+        padding: 10px 8px;
+        font-size: 0.85rem;
+    }
+    
+    .modal-box {
+        width: 90%;
+        margin: 0 15px;
+        padding: 15px;
+    }
+    
+    .modal-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .modal-actions .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 360px) {
+    body {
+        padding: 5px;
+    }
+    
+    .container, .table-container {
+        padding: 10px;
+        border-radius: 6px;
+    }
+    
+    header {
+        padding: 20px 15px;
+    }
+    
+    header h1 {
+        font-size: 1.3rem;
+    }
+    
+    .form-section {
+        padding: 12px;
+    }
+    
+    .form-actions {
+        gap: 10px;
+    }
+    
+    .btn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+    
+    #employeeTable {
+        min-width: 650px;
+    }
+
+    #employeeTable th,
+    #employeeTable td {
+        padding: 8px 6px;
+        font-size: 0.8rem;
+    }
+}
+
+
+@media (min-width: 1400px) {
+    .container, .table-container {
+        max-width: 1300px;
+    }
+}
+
+@media print {
+    .btn,
+    .form-actions,
+    #employeeForm,
+    .action-buttons {
+        display: none;
+    }
+
+    .table-container {
+        box-shadow: none;
+        padding: 0;
+    }
+
+    #employeeTable {
+        box-shadow: none;
+    }
+
+    #employeeTable th {
+        background-color: #f1f1f1 !important;
+        color: #000 !important;
+    }
+}

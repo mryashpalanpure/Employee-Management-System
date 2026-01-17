@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Employee Management System</h1>
+        </header>
+
+        <main>
+            <form id="employeeForm">
+                <div class="form-section">
+                    <div class="form-group">
+                        <label for="name">Name :- </label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name">
+                        <p id="name-para"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobile">Mobile No :-</label>
+                        <input type="tel" id="mobile" name="mobile" placeholder=" 934 567 8900">
+                        <p id="number-para"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address :- </label>
+                        <input type="text" id="email" name="email" placeholder="employee@company.com">
+                        <p id="email-para"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Address :- </label>
+                        <textarea id="address" name="address" rows="4" placeholder="Enter your address"></textarea>
+                        <p id="addr-para"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="designation">Designation :- </label>
+                        <select id="designation" name="designation">
+                            <option value="">Select employee's designation</option>
+                            <option value="Software Engineer">Software Engineer</option>
+                            <option value="Project Manager">Project Manager</option>
+                            <option value="UI/UX Designer">UI/UX Designer</option>
+                            <option value="Business Analyst">QA Tester</option>
+                            <option value="HR Manager">HR Manager</option>
+                        </select>
+                        <p id="designation-para"></p>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Gender :- </label>
+                        <div class="gender-options">
+                            <input type="radio" name="gender" value="male"> Male
+                            <input type="radio" name="gender" value="female"> Female
+                            <input type="radio" name="gender" value="other"> Other
+                        </div>
+                        <p id="gender-para"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Hobbies :-</label>
+                        <div class="hobbies-options">
+                            <input type="checkbox" name="hobby" value="reading"> Reading
+                            <input type="checkbox" name="hobby" value="sports"> Sports
+                            <input type="checkbox" name="hobby" value="music"> Music
+                            <input type="checkbox" name="hobby" value="traveling"> Traveling
+                            <input type="checkbox" name="hobby" value="photography"> Photography
+                            <input type="checkbox" name="hobby" value="cooking"> Cooking
+                        </div>
+                        <p id="hobby-para"></p>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn submit-btn">Add Employee</button>
+                        <button type="reset" class="btn reset-btn" id="reset">Reset Form</button>
+                    </div>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <div class="table-container">
+        <div class="table-wrapper">
+            <table border="2" id="employeeTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Mobile</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Designation</th>
+                        <th>Gender</th>
+                        <th>Hobbies</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="deleteModal" class="modal hidden">
+        <div class="modal-box">
+            <h3>Confirm Delete</h3>
+            <p>Are you sure you want to delete this employee?</p>
+            <div class="modal-actions">
+                <button id="confirmDelete" class="btn submit-btn">Yes</button>
+                <button id="cancelDelete" class="btn reset-btn">No</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
